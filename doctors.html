@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الأطباء | لومينا لطب الأسنان</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              abyss: "#012624",
+              deep: "#011d1c",
+              kelp: "#04423e",
+              reef: "#0a5c57",
+              platinum: "#edfffe",
+              silver: "#cbfffc",
+              mist: "#a7e5e2",
+              slate: "#82c5c2",
+              aqua: "#00827c",
+              phosphor: "#fde9ff",
+            },
+            fontFamily: { sans: ['"Readex Pro"', "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-abyss text-platinum font-sans antialiased overflow-x-hidden relative min-h-screen flex flex-col"
+  >
+    <!-- الهيدر -->
+    <header
+      class="fixed inset-x-0 top-0 z-50 bg-abyss/80 backdrop-blur-md border-b border-white/5"
+    >
+      <div
+        class="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12 flex h-20 items-center justify-between gap-6"
+      >
+        <a class="relative z-50 flex items-center gap-3" href="index.html">
+          <div class="relative flex size-9 items-center justify-center">
+            <div
+              class="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_35%_30%,#edfffe,#00827c_55%,#012624_100%)]"
+            ></div>
+            <div
+              class="absolute inset-[3px] rounded-full border border-white/30"
+            ></div>
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-lg font-medium text-platinum">لومينا</span>
+            <span dir="ltr" class="mt-1 text-[9px] tracking-[0.3em] text-silver"
+              >LUMINA DENTAL</span
+            >
+          </div>
+        </a>
+
+        <!-- قائمة الكمبيوتر -->
+        <nav class="hidden lg:block">
+          <ul class="flex items-center gap-1">
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="index.html"
+                >الرئيسية</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="services.html"
+                >الخدمات</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="doctors.html"
+                >الأطباء</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="results.html"
+                >النتائج</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="pricing.html"
+                >الأسعار</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="about.html"
+                >عن العيادة</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="contact.html"
+                >تواصل</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- أزرار الموبايل والكمبيوتر -->
+        <div class="flex items-center gap-3 relative z-50">
+          <a
+            class="rounded-md bg-aurora px-5 py-3 text-sm font-medium text-[#0b1d1c] hidden sm:inline-flex hover-lift"
+            href="booking.html"
+            >احجز موعدك</a
+          >
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-platinum">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M4 12h16M4 6h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- قائمة الموبايل المنسدلة -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-20 left-0 w-full bg-deep border-b border-white/10 shadow-2xl py-4 px-5 flex flex-col gap-4"
+      >
+        <a
+          href="index.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >الرئيسية</a
+        >
+        <a
+          href="services.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >الخدمات</a
+        >
+        <a
+          href="doctors.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >الأطباء</a
+        >
+        <a
+          href="results.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >النتائج</a
+        >
+        <a
+          href="pricing.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >الأسعار</a
+        >
+        <a
+          href="about.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >عن العيادة</a
+        >
+        <a
+          href="contact.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >تواصل</a
+        >
+        <a
+          href="booking.html"
+          class="bg-aurora text-[#0b1d1c] text-center rounded-md py-3 font-medium mt-2 hover-lift"
+          >احجز موعدك</a
+        >
+      </div>
+    </header>
+
+    <main class="flex-grow pt-32 pb-24">
+      <!-- الهيرو -->
+      <section
+        class="relative pb-16 px-5 sm:px-8 lg:px-12 overflow-hidden border-b border-white/5"
+      >
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_top,rgba(0,130,124,0.15),transparent_70%)] pointer-events-none"
+        ></div>
+        <div
+          class="mx-auto w-full max-w-[1440px] relative z-10 text-center scroll-reveal"
+        >
+          <div class="flex items-center justify-center gap-3 text-silver mb-6">
+            <span class="relative flex size-2"
+              ><span
+                class="absolute inset-0 animate-ping rounded-full bg-aqua/60"
+              ></span
+              ><span class="relative size-2 rounded-full bg-aqua"></span
+            ></span>
+            <span dir="ltr" class="text-xs uppercase tracking-widest text-mist"
+              >THE SPECIALISTS</span
+            >
+            <span class="h-px w-6 bg-white/20"></span>
+            <span class="text-sm text-silver">الأطباء</span>
+          </div>
+          <h1
+            class="text-4xl sm:text-5xl lg:text-7xl font-medium leading-[1.2] text-platinum mb-6"
+          >
+            خبرة دولية بلمسة إنسانية
+          </h1>
+          <p class="text-lg text-silver max-w-2xl mx-auto leading-relaxed">
+            كل طبيب في لومينا متخصص في مجال واحد يتقنه، ويواصل التعلم في أهم
+            المراكز العالمية — لأن ابتسامتك تستحق الأفضل في كل تفصيلة.
+          </p>
+        </div>
+      </section>
+
+      <!-- قائمة الأطباء -->
+      <section class="py-10 px-5 sm:px-8 lg:px-12">
+        <div
+          class="mx-auto w-full max-w-[1440px] flex flex-col gap-12 sm:gap-20"
+        >
+          <!-- طبيب 1: د. كريم (صورة يمين، كلام شمال) -->
+          <div
+            id="dr-karim"
+            class="flex flex-col lg:flex-row bg-kelp rounded-3xl overflow-hidden border border-white/5 group scroll-reveal"
+          >
+            <div
+              class="w-full lg:w-1/2 relative aspect-[4/3] lg:aspect-auto lg:min-h-[500px]"
+            >
+              <img
+                src="images/doctor-1.png"
+                alt="د. كريم"
+                class="absolute inset-0 w-full h-full object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div
+                class="absolute inset-0"
+                style="
+                  background-image: linear-gradient(
+                    to left,
+                    transparent,
+                    #04423e
+                  );
+                "
+              ></div>
+            </div>
+            <div
+              class="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative z-10"
+            >
+              <p
+                dir="ltr"
+                class="text-xs text-aqua tracking-widest uppercase mb-2"
+              >
+                IMPLANTOLOGY
+              </p>
+              <h2
+                class="text-3xl sm:text-4xl lg:text-5xl font-medium text-platinum mb-2"
+              >
+                د. كريم الشريف
+              </h2>
+              <h3 class="text-lg text-silver mb-6">استشاري زراعة الأسنان</h3>
+              <p class="text-mist leading-relaxed mb-8 text-lg">
+                زميل الكلية الدولية لزراعة الأسنان ITI، ومؤسس عيادة لومينا.
+                متخصص في الزراعة الفورية والجراحة الموجّهة رقميًا.
+              </p>
+              <ul class="space-y-3 mb-10">
+                <li class="flex items-center gap-3 text-sm text-silver">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-aqua"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" /></svg
+                  >دكتوراه جراحة الفم - جامعة القاهرة
+                </li>
+                <li class="flex items-center gap-3 text-sm text-silver">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-aqua"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" /></svg
+                  >زمالة ITI - سويسرا
+                </li>
+              </ul>
+              <div
+                class="flex flex-wrap items-center justify-between gap-6 pt-8 border-t border-white/10"
+              >
+                <div class="flex gap-8">
+                  <div>
+                    <p class="text-4xl font-medium text-platinum" dir="ltr">
+                      18
+                    </p>
+                    <p class="text-xs text-slate mt-1">عامًا من الخبرة</p>
+                  </div>
+                  <div>
+                    <p class="text-4xl font-medium text-platinum" dir="ltr">
+                      4,200+
+                    </p>
+                    <p class="text-xs text-slate mt-1">حالة ناجحة</p>
+                  </div>
+                </div>
+                <a
+                  href="booking.html?doctor=karim"
+                  class="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-medium text-abyss hover:bg-aqua transition-colors"
+                  >احجز مع د. كريم
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17V7h10"></path>
+                    <path d="M17 17 7 7"></path></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- طبيب 2: د. أميرة (صورة شمال، كلام يمين) -->
+          <div
+            id="dr-amira"
+            class="flex flex-col lg:flex-row-reverse bg-kelp rounded-3xl overflow-hidden border border-white/5 group scroll-reveal"
+          >
+            <div
+              class="w-full lg:w-1/2 relative aspect-[4/3] lg:aspect-auto lg:min-h-[500px]"
+            >
+              <img
+                src="images/doctor-2.png"
+                alt="د. أميرة"
+                class="absolute inset-0 w-full h-full object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div
+                class="absolute inset-0"
+                style="
+                  background-image: linear-gradient(
+                    to right,
+                    transparent,
+                    #04423e
+                  );
+                "
+              ></div>
+            </div>
+            <div
+              class="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative z-10"
+            >
+              <p
+                dir="ltr"
+                class="text-xs text-aqua tracking-widest uppercase mb-2"
+              >
+                AESTHETIC DENTISTRY
+              </p>
+              <h2
+                class="text-3xl sm:text-4xl lg:text-5xl font-medium text-platinum mb-2"
+              >
+                د. أميرة الفايز
+              </h2>
+              <h3 class="text-lg text-silver mb-6">استشارية تجميل الأسنان</h3>
+              <p class="text-mist leading-relaxed mb-8 text-lg">
+                متخصصة في تصميم الابتسامة الرقمي DSD والقشور الخزفية فائقة
+                الرقة. حاصلة على شهادة DSD Master.
+              </p>
+              <ul class="space-y-3 mb-10">
+                <li class="flex items-center gap-3 text-sm text-silver">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-aqua"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" /></svg
+                  >ماجستير تجميل الأسنان - جامعة عين شمس
+                </li>
+                <li class="flex items-center gap-3 text-sm text-silver">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-aqua"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" /></svg
+                  >DSD Certified Master
+                </li>
+              </ul>
+              <div
+                class="flex flex-wrap items-center justify-between gap-6 pt-8 border-t border-white/10"
+              >
+                <div class="flex gap-8">
+                  <div>
+                    <p class="text-4xl font-medium text-platinum" dir="ltr">
+                      12
+                    </p>
+                    <p class="text-xs text-slate mt-1">عامًا من الخبرة</p>
+                  </div>
+                  <div>
+                    <p class="text-4xl font-medium text-platinum" dir="ltr">
+                      3,100+
+                    </p>
+                    <p class="text-xs text-slate mt-1">حالة ناجحة</p>
+                  </div>
+                </div>
+                <a
+                  href="booking.html?doctor=amira"
+                  class="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-medium text-abyss hover:bg-aqua transition-colors"
+                  >احجز مع د. أميرة
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17V7h10"></path>
+                    <path d="M17 17 7 7"></path></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- طبيب 3: د. يوسف (صورة يمين، كلام شمال) -->
+          <div
+            id="dr-youssef"
+            class="flex flex-col lg:flex-row bg-kelp rounded-3xl overflow-hidden border border-white/5 group scroll-reveal"
+          >
+            <div
+              class="w-full lg:w-1/2 relative aspect-[4/3] lg:aspect-auto lg:min-h-[500px]"
+            >
+              <img
+                src="images/doctor-3.png"
+                alt="د. يوسف"
+                class="absolute inset-0 w-full h-full object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div
+                class="absolute inset-0"
+                style="
+                  background-image: linear-gradient(
+                    to left,
+                    transparent,
+                    #04423e
+                  );
+                "
+              ></div>
+            </div>
+            <div
+              class="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative z-10"
+            >
+              <p
+                dir="ltr"
+                class="text-xs text-aqua tracking-widest uppercase mb-2"
+              >
+                ORTHODONTICS
+              </p>
+              <h2
+                class="text-3xl sm:text-4xl lg:text-5xl font-medium text-platinum mb-2"
+              >
+                د. يوسف منصور
+              </h2>
+              <h3 class="text-lg text-silver mb-6">أخصائي تقويم الأسنان</h3>
+              <p class="text-mist leading-relaxed mb-8 text-lg">
+                مزوّد معتمد للتقويم الشفاف من الفئة الماسية. يجمع بين الدقة
+                الرقمية واللمسة الجمالية في كل خطة علاج.
+              </p>
+              <ul class="space-y-3 mb-10">
+                <li class="flex items-center gap-3 text-sm text-silver">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-aqua"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" /></svg
+                  >ماجستير تقويم الأسنان - جامعة الإسكندرية
+                </li>
+                <li class="flex items-center gap-3 text-sm text-silver">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-aqua"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" /></svg
+                  >Clear Aligners - Diamond Provider
+                </li>
+              </ul>
+              <div
+                class="flex flex-wrap items-center justify-between gap-6 pt-8 border-t border-white/10"
+              >
+                <div class="flex gap-8">
+                  <div>
+                    <p class="text-4xl font-medium text-platinum" dir="ltr">
+                      9
+                    </p>
+                    <p class="text-xs text-slate mt-1">عامًا من الخبرة</p>
+                  </div>
+                  <div>
+                    <p class="text-4xl font-medium text-platinum" dir="ltr">
+                      1,800+
+                    </p>
+                    <p class="text-xs text-slate mt-1">حالة ناجحة</p>
+                  </div>
+                </div>
+                <a
+                  href="booking.html?doctor=youssef"
+                  class="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-medium text-abyss hover:bg-aqua transition-colors"
+                  >احجز مع د. يوسف
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17V7h10"></path>
+                    <path d="M17 17 7 7"></path></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- طبيب 4: د. ليلى (صورة شمال، كلام يمين) -->
+          <div
+            id="dr-leila"
+            class="flex flex-col lg:flex-row-reverse bg-kelp rounded-3xl overflow-hidden border border-white/5 group scroll-reveal"
+          >
+            <div
+              class="w-full lg:w-1/2 relative aspect-[4/3] lg:aspect-auto lg:min-h-[500px]"
+            >
+              <img
+                src="images/doctor-4.png"
+                alt="د. ليلى"
+                class="absolute inset-0 w-full h-full object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div
+                class="absolute inset-0"
+                style="
+                  background-image: linear-gradient(
+                    to right,
+                    transparent,
+                    #04423e
+                  );
+                "
+              ></div>
+            </div>
+            <div
+              class="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative z-10"
+            >
+              <p
+                dir="ltr"
+                class="text-xs text-aqua tracking-widest uppercase mb-2"
+              >
+                PEDIATRIC CARE
+              </p>
+              <h2
+                class="text-3xl sm:text-4xl lg:text-5xl font-medium text-platinum mb-2"
+              >
+                د. ليلى حسن
+              </h2>
+              <h3 class="text-lg text-silver mb-6">أخصائية أسنان الأطفال</h3>
+              <p class="text-mist leading-relaxed mb-8 text-lg">
+                تؤمن بأن الزيارة الأولى تصنع علاقة العمر. متخصصة في علاج الأطفال
+                بأسلوب هادئ قائم على اللعب.
+              </p>
+              <ul class="space-y-3 mb-10">
+                <li class="flex items-center gap-3 text-sm text-silver">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-aqua"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" /></svg
+                  >ماجستير طب أسنان الأطفال
+                </li>
+                <li class="flex items-center gap-3 text-sm text-silver">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-aqua"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" /></svg
+                  >دبلومة التخدير بالغاز
+                </li>
+              </ul>
+              <div
+                class="flex flex-wrap items-center justify-between gap-6 pt-8 border-t border-white/10"
+              >
+                <div class="flex gap-8">
+                  <div>
+                    <p class="text-4xl font-medium text-platinum" dir="ltr">
+                      10
+                    </p>
+                    <p class="text-xs text-slate mt-1">عامًا من الخبرة</p>
+                  </div>
+                  <div>
+                    <p class="text-4xl font-medium text-platinum" dir="ltr">
+                      5,000+
+                    </p>
+                    <p class="text-xs text-slate mt-1">حالة ناجحة</p>
+                  </div>
+                </div>
+                <a
+                  href="booking.html?doctor=leila"
+                  class="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-medium text-abyss hover:bg-aqua transition-colors"
+                  >احجز مع د. ليلى
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17V7h10"></path>
+                    <path d="M17 17 7 7"></path></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- قسم الحجز (CTA) -->
+      <section class="py-10 px-5 sm:px-8 lg:px-12 scroll-reveal mt-10">
+        <div
+          class="mx-auto w-full max-w-[1440px] bg-deep rounded-3xl p-12 text-center border border-white/5 relative overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,130,124,0.1),transparent_70%)]"
+          ></div>
+          <div class="relative z-10">
+            <div
+              class="flex items-center justify-center gap-3 text-silver mb-4"
+            >
+              <span
+                dir="ltr"
+                class="text-xs uppercase tracking-widest text-mist"
+                >FIRST VISIT · FREE</span
+              >
+              <span class="h-px w-6 bg-white/20"></span>
+              <span class="text-sm text-silver">الاستشارة الأولى مجانًا</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-medium text-platinum mb-6">
+              ابتسامتك القادمة تبدأ بزيارة واحدة
+            </h2>
+            <p class="text-silver mb-8 max-w-xl mx-auto">
+              فحص شامل، أشعة رقمية، وخطة علاج مكتوبة بوضوح — بدون أي التزام.
+            </p>
+            <a
+              href="booking.html"
+              class="inline-block rounded-md bg-aurora px-8 py-4 text-sm font-medium text-[#0b1d1c] hover-lift"
+              >احجز استشارتك المجانية</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer
+      class="bg-deep pt-20 pb-8 px-5 border-t border-white/5 relative z-10 mt-auto"
+    >
+      <div
+        class="mx-auto w-full max-w-[1440px] grid md:grid-cols-4 gap-12 mb-16 text-center md:text-right"
+      >
+        <!-- اللوجو والوصف -->
+        <div class="md:col-span-2">
+          <h3 class="text-2xl text-platinum mb-4">لومينا لطب الأسنان</h3>
+          <p class="text-silver max-w-sm mx-auto md:mx-0 leading-relaxed">
+            عيادة متخصصة في طب الأسنان الرقمي والتجميلي، نجمع بين أحدث التقنيات
+            العالمية ولمسة إنسانية تجعل كل زيارة مريحة.
+          </p>
+        </div>
+
+        <!-- روابط سريعة -->
+        <div>
+          <h4 class="text-platinum mb-4 font-medium">روابط سريعة</h4>
+          <ul class="space-y-2 text-silver">
+            <li>
+              <a href="services.html" class="hover:text-aqua transition-colors"
+                >الخدمات</a
+              >
+            </li>
+            <li>
+              <a href="doctors.html" class="hover:text-aqua transition-colors"
+                >الأطباء</a
+              >
+            </li>
+            <li>
+              <a href="results.html" class="hover:text-aqua transition-colors"
+                >النتائج</a
+              >
+            </li>
+            <li>
+              <a href="pricing.html" class="hover:text-aqua transition-colors"
+                >الأسعار</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- بيانات التواصل -->
+        <div>
+          <h4 class="text-platinum mb-4 font-medium">تواصل معنا</h4>
+          <p class="text-silver mb-2" dir="ltr">+20 100 000 0000</p>
+          <p class="text-silver mb-2" dir="ltr">hello@lumina.dental</p>
+          <p class="text-silver leading-relaxed">
+            التجمع الخامس، شارع التسعين الجنوبي، مبنى ٢٤، القاهرة الجديدة
+          </p>
+        </div>
+      </div>
+
+      <!-- الحقوق -->
+      <div
+        class="text-center text-slate text-sm border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between max-w-[1440px] mx-auto"
+      >
+        <p>© 2026 لومينا لطب الأسنان. جميع الحقوق محفوظة.</p>
+        <p dir="ltr" class="uppercase tracking-widest text-xs mt-4 sm:mt-0">
+          CRAFTED SMILES · CAIRO
+        </p>
+      </div>
+
+      <!-- كلمة LUMINA الكبيرة في الخلفية -->
+      <div
+        class="mt-12 text-center overflow-hidden pointer-events-none select-none"
+      >
+        <h1
+          class="text-[15vw] leading-none font-bold text-transparent opacity-10"
+          style="-webkit-text-stroke: 2px #edfffe"
+        >
+          LUMINA
+        </h1>
+      </div>
+    </footer>
+    <!-- زرار الواتساب الفخم (Premium WhatsApp FAB) -->
+    <a
+      href="https://wa.me/201036822308?text=مرحباَ, أود حجز استشارة ."
+      target="_blank"
+      class="group fixed bottom-6 left-6 sm:bottom-8 sm:left-8 z-[60] flex items-center gap-0 rounded-full bg-deep/80 backdrop-blur-md border border-aqua/30 p-4 text-aqua shadow-[0_0_20px_rgba(0,130,124,0.15)] transition-all duration-500 hover:bg-kelp hover:border-aqua hover:shadow-[0_0_30px_rgba(0,130,124,0.4)] hover:-translate-y-1"
+    >
+      <!-- حركة النبض (Pulse) -->
+      <span
+        class="absolute inset-0 rounded-full animate-pulse-ring bg-aqua/20"
+      ></span>
+
+      <!-- أيقونة الواتساب -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="relative z-10 size-6"
+      >
+        <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+        <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+        <path d="M14 14a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1Z" />
+        <path d="M9.5 9.5c.5 1 2.5 3.5 5.5 4.5" />
+      </svg>
+
+      <!-- النص اللي بيظهر عند الوقوف بالماوس -->
+      <span
+        class="relative z-10 max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium transition-all duration-500 group-hover:max-w-[80px] group-hover:mr-3"
+      >
+        واتساب
+      </span>
+    </a>
+    <script src="script.js"></script>
+  </body>
+</html>

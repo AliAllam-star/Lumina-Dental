@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عن العيادة | لومينا لطب الأسنان</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              abyss: "#012624",
+              deep: "#011d1c",
+              kelp: "#04423e",
+              reef: "#0a5c57",
+              platinum: "#edfffe",
+              silver: "#cbfffc",
+              mist: "#a7e5e2",
+              slate: "#82c5c2",
+              aqua: "#00827c",
+              phosphor: "#fde9ff",
+            },
+            fontFamily: { sans: ['"Readex Pro"', "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-abyss text-platinum font-sans antialiased overflow-x-hidden relative min-h-screen flex flex-col"
+  >
+    <!-- الهيدر -->
+    <header
+      class="fixed inset-x-0 top-0 z-50 bg-abyss/80 backdrop-blur-md border-b border-white/5"
+    >
+      <div
+        class="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12 flex h-20 items-center justify-between gap-6"
+      >
+        <a class="relative z-50 flex items-center gap-3" href="index.html">
+          <div class="relative flex size-9 items-center justify-center">
+            <div
+              class="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_35%_30%,#edfffe,#00827c_55%,#012624_100%)]"
+            ></div>
+            <div
+              class="absolute inset-[3px] rounded-full border border-white/30"
+            ></div>
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-lg font-medium text-platinum">لومينا</span>
+            <span dir="ltr" class="mt-1 text-[9px] tracking-[0.3em] text-silver"
+              >LUMINA DENTAL</span
+            >
+          </div>
+        </a>
+
+        <!-- قائمة الكمبيوتر -->
+        <nav class="hidden lg:block">
+          <ul class="flex items-center gap-1">
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="index.html"
+                >الرئيسية</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="services.html"
+                >الخدمات</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="doctors.html"
+                >الأطباء</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="results.html"
+                >النتائج</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="pricing.html"
+                >الأسعار</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="about.html"
+                >عن العيادة</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-4 py-2 text-sm text-silver hover:text-platinum transition-colors"
+                href="contact.html"
+                >تواصل</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- أزرار الموبايل والكمبيوتر -->
+        <div class="flex items-center gap-3 relative z-50">
+          <a
+            class="rounded-md bg-aurora px-5 py-3 text-sm font-medium text-[#0b1d1c] hidden sm:inline-flex hover-lift"
+            href="booking.html"
+            >احجز موعدك</a
+          >
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-platinum">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M4 12h16M4 6h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- قائمة الموبايل المنسدلة -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-20 left-0 w-full bg-deep border-b border-white/10 shadow-2xl py-4 px-5 flex flex-col gap-4"
+      >
+        <a
+          href="index.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >الرئيسية</a
+        >
+        <a
+          href="services.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >الخدمات</a
+        >
+        <a
+          href="doctors.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >الأطباء</a
+        >
+        <a
+          href="results.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >النتائج</a
+        >
+        <a
+          href="pricing.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >الأسعار</a
+        >
+        <a
+          href="about.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >عن العيادة</a
+        >
+        <a
+          href="contact.html"
+          class="text-silver hover:text-platinum block py-2 border-b border-white/5"
+          >تواصل</a
+        >
+        <a
+          href="booking.html"
+          class="bg-aurora text-[#0b1d1c] text-center rounded-md py-3 font-medium mt-2 hover-lift"
+          >احجز موعدك</a
+        >
+      </div>
+    </header>
+
+    <main class="flex-grow pt-32 pb-24">
+      <!-- الهيرو -->
+      <section
+        class="relative pb-16 px-5 sm:px-8 lg:px-12 overflow-hidden border-b border-white/5"
+      >
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_top,rgba(0,130,124,0.15),transparent_70%)] pointer-events-none"
+        ></div>
+        <div class="mx-auto w-full max-w-[1440px] relative z-10 text-center">
+          <div class="flex items-center justify-center gap-3 text-silver mb-6">
+            <span class="relative flex size-2"
+              ><span
+                class="absolute inset-0 animate-ping rounded-full bg-aqua/60"
+              ></span
+              ><span class="relative size-2 rounded-full bg-aqua"></span
+            ></span>
+            <span dir="ltr" class="text-xs uppercase tracking-widest text-mist"
+              >WHY LUMINA</span
+            >
+            <span class="h-px w-6 bg-white/20"></span>
+            <span class="text-sm text-silver">لماذا لومينا</span>
+          </div>
+          <h1
+            class="text-4xl sm:text-5xl lg:text-7xl font-medium leading-[1.2] text-platinum mb-6"
+          >
+            دقة المختبر،
+            <span class="bg-aurora bg-clip-text text-transparent"
+              >ودفء البيت</span
+            >
+          </h1>
+          <p class="text-lg text-silver max-w-2xl mx-auto leading-relaxed">
+            صممنا كل تفصيلة في لومينا حول سؤال واحد: كيف نجعل زيارة طبيب الأسنان
+            تجربة تنتظرها، لا تخشاها؟
+          </p>
+        </div>
+      </section>
+
+      <!-- القسم الأصلي (لماذا لومينا + الرسمة المتحركة) -->
+      <section class="py-20 px-5 sm:px-8 lg:px-12">
+        <div
+          class="mx-auto w-full max-w-[1440px] grid items-center gap-16 lg:grid-cols-12"
+        >
+          <!-- النص والقائمة (7 أعمدة) -->
+          <div class="lg:col-span-7">
+            <ul class="flex flex-col">
+              <!-- العنصر الأول -->
+              <li class="group border-t border-white/10 py-7 last:border-b">
+                <div class="flex items-start gap-6">
+                  <span
+                    dir="ltr"
+                    class="text-xs uppercase tracking-widest mt-1.5 text-slate group-hover:text-aqua transition-colors"
+                    >01</span
+                  >
+                  <div>
+                    <h3 class="text-xl font-medium text-platinum sm:text-2xl">
+                      تخطيط رقمي قبل أي خطوة
+                    </h3>
+                    <p class="mt-2 leading-relaxed text-silver">
+                      ترى نتيجتك النهائية على الشاشة ثلاثية الأبعاد قبل أن نبدأ
+                      العلاج.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <!-- العنصر التاني -->
+              <li class="group border-t border-white/10 py-7 last:border-b">
+                <div class="flex items-start gap-6">
+                  <span
+                    dir="ltr"
+                    class="text-xs uppercase tracking-widest mt-1.5 text-slate group-hover:text-aqua transition-colors"
+                    >02</span
+                  >
+                  <div>
+                    <h3 class="text-xl font-medium text-platinum sm:text-2xl">
+                      بلا ألم وبلا قلق
+                    </h3>
+                    <p class="mt-2 leading-relaxed text-silver">
+                      تخدير رقمي، وغرف هادئة، وفريق يشرح لك كل شيء بلغة بسيطة.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <!-- العنصر التالت -->
+              <li class="group border-t border-white/10 py-7 last:border-b">
+                <div class="flex items-start gap-6">
+                  <span
+                    dir="ltr"
+                    class="text-xs uppercase tracking-widest mt-1.5 text-slate group-hover:text-aqua transition-colors"
+                    >03</span
+                  >
+                  <div>
+                    <h3 class="text-xl font-medium text-platinum sm:text-2xl">
+                      ضمان مكتوب وشفافية كاملة
+                    </h3>
+                    <p class="mt-2 leading-relaxed text-silver">
+                      أسعار واضحة مسبقًا وضمانات مكتوبة على الزراعة والتركيبات.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- الرسمة الهندسية المتحركة (5 أعمدة) -->
+          <div class="relative lg:col-span-5 flex justify-center">
+            <div class="w-full max-w-sm animate-float-slow">
+              <svg
+                viewBox="0 0 400 500"
+                class="h-auto w-full"
+                aria-hidden="true"
+                fill="none"
+              >
+                <!-- الخطوط -->
+                <line
+                  x1="200"
+                  y1="60"
+                  x2="90"
+                  y2="150"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="200"
+                  y1="60"
+                  x2="310"
+                  y2="160"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="90"
+                  y1="150"
+                  x2="160"
+                  y2="250"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="310"
+                  y1="160"
+                  x2="160"
+                  y2="250"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="310"
+                  y1="160"
+                  x2="330"
+                  y2="300"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="160"
+                  y1="250"
+                  x2="60"
+                  y2="320"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="160"
+                  y1="250"
+                  x2="240"
+                  y2="380"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="330"
+                  y1="300"
+                  x2="240"
+                  y2="380"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="60"
+                  y1="320"
+                  x2="120"
+                  y2="430"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="240"
+                  y1="380"
+                  x2="120"
+                  y2="430"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="240"
+                  y1="380"
+                  x2="330"
+                  y2="440"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+                <line
+                  x1="330"
+                  y1="300"
+                  x2="330"
+                  y2="440"
+                  stroke="rgba(237,255,254,0.35)"
+                  stroke-width="1"
+                />
+
+                <!-- الدواير -->
+                <circle
+                  cx="200"
+                  cy="60"
+                  r="26"
+                  fill="#edfffe"
+                  stroke="#edfffe"
+                  stroke-opacity="0.7"
+                />
+                <circle
+                  cx="90"
+                  cy="150"
+                  r="16"
+                  fill="transparent"
+                  stroke="#edfffe"
+                  stroke-opacity="0.7"
+                />
+                <circle cx="90" cy="150" r="4" fill="#cbfffc" />
+                <circle
+                  cx="310"
+                  cy="160"
+                  r="34"
+                  fill="transparent"
+                  stroke="#edfffe"
+                  stroke-opacity="0.7"
+                />
+                <circle cx="310" cy="160" r="8.5" fill="#cbfffc" />
+                <circle
+                  cx="160"
+                  cy="250"
+                  r="42"
+                  fill="#fde9ff"
+                  stroke="#edfffe"
+                  stroke-opacity="0.7"
+                />
+                <circle
+                  cx="330"
+                  cy="300"
+                  r="14"
+                  fill="transparent"
+                  stroke="#edfffe"
+                  stroke-opacity="0.7"
+                />
+                <circle cx="330" cy="300" r="3.5" fill="#cbfffc" />
+                <circle
+                  cx="60"
+                  cy="320"
+                  r="22"
+                  fill="transparent"
+                  stroke="#edfffe"
+                  stroke-opacity="0.7"
+                />
+                <circle cx="60" cy="320" r="5.5" fill="#cbfffc" />
+                <circle
+                  cx="240"
+                  cy="380"
+                  r="18"
+                  fill="#edfffe"
+                  stroke="#edfffe"
+                  stroke-opacity="0.7"
+                />
+                <circle
+                  cx="120"
+                  cy="430"
+                  r="12"
+                  fill="transparent"
+                  stroke="#edfffe"
+                  stroke-opacity="0.7"
+                />
+                <circle cx="120" cy="430" r="3" fill="#cbfffc" />
+                <circle
+                  cx="330"
+                  cy="440"
+                  r="28"
+                  fill="transparent"
+                  stroke="#edfffe"
+                  stroke-opacity="0.7"
+                />
+                <circle cx="330" cy="440" r="7" fill="#cbfffc" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- قسم المكان (The Space) زي الأصل -->
+      <section class="relative overflow-hidden py-20 sm:py-28">
+        <div
+          class="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12 relative"
+        >
+          <div
+            class="relative w-full aspect-[4/5] sm:aspect-[16/9] rounded-3xl overflow-hidden border border-white/10"
+          >
+            <!-- الصورة -->
+            <img
+              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop"
+              alt="عيادة لومينا"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <!-- التظليل -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-abyss via-abyss/40 to-transparent"
+            ></div>
+
+            <!-- الكلام -->
+            <div
+              class="absolute inset-x-0 bottom-0 flex flex-col gap-6 p-6 sm:flex-row sm:items-end sm:justify-between sm:p-12"
+            >
+              <div class="max-w-lg">
+                <div class="flex items-center gap-3 text-silver">
+                  <span class="relative flex size-2"
+                    ><span
+                      class="absolute inset-0 animate-ping rounded-full bg-aqua/60"
+                    ></span
+                    ><span class="relative size-2 rounded-full bg-aqua"></span
+                  ></span>
+                  <span
+                    dir="ltr"
+                    class="text-xs uppercase tracking-widest text-mist"
+                    >THE SPACE</span
+                  >
+                  <span class="h-px w-6 bg-white/20"></span>
+                  <span class="text-sm text-silver">المكان</span>
+                </div>
+                <h2
+                  class="mt-4 text-3xl font-medium leading-[1.25] text-platinum sm:text-4xl"
+                >
+                  مساحة صُممت لتهدّئ أعصابك قبل أن تجلس على الكرسي
+                </h2>
+              </div>
+              <p class="max-w-xs text-sm leading-relaxed text-silver">
+                إضاءة دافئة، عزل صوتي، شاشات ترفيه في السقف، ومعطّر هواء طبيعي —
+                لأن الراحة جزء من العلاج.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer
+      class="bg-deep pt-20 pb-8 px-5 border-t border-white/5 relative z-10 mt-auto"
+    >
+      <div
+        class="mx-auto w-full max-w-[1440px] grid md:grid-cols-4 gap-12 mb-16 text-center md:text-right"
+      >
+        <!-- اللوجو والوصف -->
+        <div class="md:col-span-2">
+          <h3 class="text-2xl text-platinum mb-4">لومينا لطب الأسنان</h3>
+          <p class="text-silver max-w-sm mx-auto md:mx-0 leading-relaxed">
+            عيادة متخصصة في طب الأسنان الرقمي والتجميلي، نجمع بين أحدث التقنيات
+            العالمية ولمسة إنسانية تجعل كل زيارة مريحة.
+          </p>
+        </div>
+
+        <!-- روابط سريعة -->
+        <div>
+          <h4 class="text-platinum mb-4 font-medium">روابط سريعة</h4>
+          <ul class="space-y-2 text-silver">
+            <li>
+              <a href="services.html" class="hover:text-aqua transition-colors"
+                >الخدمات</a
+              >
+            </li>
+            <li>
+              <a href="doctors.html" class="hover:text-aqua transition-colors"
+                >الأطباء</a
+              >
+            </li>
+            <li>
+              <a href="results.html" class="hover:text-aqua transition-colors"
+                >النتائج</a
+              >
+            </li>
+            <li>
+              <a href="pricing.html" class="hover:text-aqua transition-colors"
+                >الأسعار</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- بيانات التواصل -->
+        <div>
+          <h4 class="text-platinum mb-4 font-medium">تواصل معنا</h4>
+          <p class="text-silver mb-2" dir="ltr">+20 100 000 0000</p>
+          <p class="text-silver mb-2" dir="ltr">hello@lumina.dental</p>
+          <p class="text-silver leading-relaxed">
+            التجمع الخامس، شارع التسعين الجنوبي، مبنى ٢٤، القاهرة الجديدة
+          </p>
+        </div>
+      </div>
+
+      <!-- الحقوق -->
+      <div
+        class="text-center text-slate text-sm border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between max-w-[1440px] mx-auto"
+      >
+        <p>© 2026 لومينا لطب الأسنان. جميع الحقوق محفوظة.</p>
+        <p dir="ltr" class="uppercase tracking-widest text-xs mt-4 sm:mt-0">
+          CRAFTED SMILES · CAIRO
+        </p>
+      </div>
+
+      <!-- كلمة LUMINA الكبيرة في الخلفية -->
+      <div
+        class="mt-12 text-center overflow-hidden pointer-events-none select-none"
+      >
+        <h1
+          class="text-[15vw] leading-none font-bold text-transparent opacity-10"
+          style="-webkit-text-stroke: 2px #edfffe"
+        >
+          LUMINA
+        </h1>
+      </div>
+    </footer>
+    <!-- زرار الواتساب الفخم (Premium WhatsApp FAB) -->
+    <a
+      href="https://wa.me/201036822308?text=مرحباَ, أود حجز استشارة ."
+      target="_blank"
+      class="group fixed bottom-6 left-6 sm:bottom-8 sm:left-8 z-[60] flex items-center gap-0 rounded-full bg-deep/80 backdrop-blur-md border border-aqua/30 p-4 text-aqua shadow-[0_0_20px_rgba(0,130,124,0.15)] transition-all duration-500 hover:bg-kelp hover:border-aqua hover:shadow-[0_0_30px_rgba(0,130,124,0.4)] hover:-translate-y-1"
+    >
+      <!-- حركة النبض (Pulse) -->
+      <span
+        class="absolute inset-0 rounded-full animate-pulse-ring bg-aqua/20"
+      ></span>
+
+      <!-- أيقونة الواتساب -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="relative z-10 size-6"
+      >
+        <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+        <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+        <path d="M14 14a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1Z" />
+        <path d="M9.5 9.5c.5 1 2.5 3.5 5.5 4.5" />
+      </svg>
+
+      <!-- النص اللي بيظهر عند الوقوف بالماوس -->
+      <span
+        class="relative z-10 max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium transition-all duration-500 group-hover:max-w-[80px] group-hover:mr-3"
+      >
+        واتساب
+      </span>
+    </a>
+    <script src="script.js"></script>
+  </body>
+</html>
